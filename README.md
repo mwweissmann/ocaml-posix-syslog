@@ -21,10 +21,6 @@ let _ =
   closelog ()
 ```
 
-The source code of posix-syslog is available under the MIT license.
-
-This library is originally written by [Markus Weissmann](http://www.mweissmann.de/)
-
 ## API
 ```ocaml
 module Option : sig
@@ -84,4 +80,9 @@ val syslog : ?facility:Facility.t -> Level.t -> ('a, unit, string, unit) format4
 val closelog : unit -> unit
 
 val setlogmask : Level.t list -> Level.t list
-'''
+```
+
+The source code of posix-syslog is available under the MIT license.
+
+This library is originally written by [Markus Weissmann](http://www.mweissmann.de/)
+
