@@ -1,0 +1,33 @@
+OASISFormat: 0.4
+Name:        posix-syslog
+Version:     0.6.0
+Synopsis:    bindings to POSIX syslog functions
+Authors:     Markus W. Weissmann <markus.weissmann@in.tum.de>
+Maintainers: Markus W. Weissmann <markus.weissmann@in.tum.de>
+Homepage:    https://github.com/mwweissmann/ocaml-posix-syslog/
+License:     MIT
+Plugins:     META (0.4)
+
+Library "posix-syslog"
+  Path:       src
+  CSources:   syslog_cstubs.c
+  CCOpt:      -O2 -Wall -Wextra -Wno-unused-parameter -I $libdir
+  BuildTools: ocamlbuild
+  Modules:    Posix_syslog
+  BuildDepends: unix, result
+
+Document doclib
+  Title:                API reference for posix-syslog
+  Type:                 ocamlbuild (0.3)
+  Install:              false
+  BuildTools+:          ocamlbuild, ocamldoc
+  XOCamlbuildPath:      src
+  XOCamlbuildLibraries: posix-syslog
+
+Executable "test"
+  Path:       src
+  MainIs:     test.ml
+  BuildDepends: posix-syslog
+  CompiledObject: best
+  BuildTools: ocamlbuild
+  Install: false

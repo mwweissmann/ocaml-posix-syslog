@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: dd647884a73a0ddd15962090a1ec2804)
+version = "0.6.0"
+description = "bindings to POSIX syslog functions"
+requires = "unix result"
+archive(byte) = "posix-syslog.cma"
+archive(byte, plugin) = "posix-syslog.cma"
+archive(native) = "posix-syslog.cmxa"
+archive(native, plugin) = "posix-syslog.cmxs"
+exists_if = "posix-syslog.cma"
+# OASIS_STOP
+
