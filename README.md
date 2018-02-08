@@ -10,7 +10,7 @@ open Posix_syslog
 
 let _ =
   openlog ~ident:"test4716" [Option.LOG_CONS] Facility.LOG_USER;
-  let old_mask = setlogmask Level.(upto LOG_DEBUG) in
+  let old_mask = setlogmask Level.(upto LOG_NOTICE) in
   let rec loop n = function
     | 0 -> print_endline "done"
     | n ->
